@@ -1,0 +1,571 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fill Me Up!</title>
+
+
+    <script src="js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/gridCV.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div id="nav" class="col-xs-4">
+
+            <h2 class="h2-responsive divider-new centerMeNow wow fadeInDown">HEY THERE, I AM CV GUY.<br>AND YOU ARE?</h2>
+            <p id='formHeader' class="centerMeNowP wow fadeInDown">GO AHEAD, SELECT A TEMPLATE OF YOUR CHOICE</p>
+
+            <div class="col-md-4">
+                <form id='basicInfo'>
+                    <input type='text' id='firstName' placeholder='First Name' />
+                    <br/>
+                    <input type='text' id='lastName' placeholder='Last Name' />
+                    <br/>
+                    <input type='number' id='contact' placeholder='Phone Number' />
+                    <br/>
+                    <input type='email' id='userMail' placeholder='Email Address' />
+                    <br/>
+                    <input type='text' id='userWebsite' placeholder='Website' />
+                    <br/>
+                    <input id='submitBasicInfo' type='submit' value='Yo!' />
+                </form>
+            </div>
+
+
+
+                <form id='skillForm'>
+                    <input type='text' class='skill' placeholder='enter the skill' />
+                    <br/>
+                    <button id='addSkill'>Add another Skill!</button>
+                    <input type='submit' id='submitSkills' value='Yo!' />
+                </form>
+
+                <form id='userExperienceForm'>
+                    <input type='text' class='jobTitle' placeholder='Job Title' />
+                    <br/>
+                    <input type='text' class='companyName' placeholder='Enter Company Name' />
+                    <br/>
+                    <input type='text' class='jobResponsibility' placeholder='Your Job Responsibilities' />
+                    <br/>
+                    <button id='addExperience'>Add more Experience</button>
+                    <input type='submit' id='submitUserExperienceForm' value='Yo!' />
+                </form>
+
+                <form id='userEducationForm'>
+                    <input type='text' class='institutionName' placeholder='Institute Name' />
+                    <br/>
+                    <input type='text' class='completionDate' placeholder='Your completion date' />
+                    <br/>
+                    <input type='text' class='degree' placeholder='Give Degree' />
+                    <br/>
+                    <button id='addEducation'>Add More :)</button>
+                    <input type='submit' id='submitEducationForm' value='Yo!' />
+                </form>
+
+                <form id='userHobbiesForm'>
+                    <input type='text' class='hobbies' placeholder='enter your hobby' />
+                    <br/>
+                    <button id='addHobby'>Add another hobby!</button>
+                    <input type='submit' id='submitHobbies' value='Yo!' />
+                </form>
+
+                <form id='selectFormatForm'>
+                    <a href='' download='index.html' id='htmlFormat'>HTML Format</a>
+                    <button id='pdfFormat'>PDF Format</button>
+                </form>
+                <button id='prevButton'>Previous</button>
+
+        </div>
+
+
+        <div id="chooseTemplateForm" class="col-xs-8 offset-1">
+            <div class="row">
+                <div id="template1" class="templateTheme col-md-6">
+                    <img src="img/t1.PNG" class="img-responsive">
+                </div>
+                <div id="template2" class="templateTheme col-md-6">
+                    <img src="img/t2.PNG" class="img-responsive">
+                </div>
+                <div id="template3" class="templateTheme col-md-6">
+                    <img src="img/t3.PNG" class="img-responsive">
+                </div>
+                <div id="template4" class="templateTheme col-md-6">
+                    <img src="img/t4.PNG" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div id="formPreview" class="col-sm-6">
+            <div class="marginMe">
+                <section>
+                    <div class="row">
+                        <div class="col basicInfo">
+                            <h2 id="t_firstName">Lala</h2>
+                            <h2 id="t_lastName"> La</h2>
+                            <br>
+                            <h6 id=t_phone>123456789</h6>
+                            <h6 id=t_email>lala@lala.com</h6>
+                            <h6 id=t_website>www.lala.com</h6>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col blueDiv blackDiv">
+                                    <h4>Skills</h4>
+                                </div>
+                            </div>
+                            <ul id="t_skills">
+                                <li>Skill 1</li>
+                                <li>Skill 2</li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col woekEx ">
+                            <div class="col blueDiv blackDiv">
+                                <h4>Work Experience</h4>
+                            </div>
+                            <ul id="t_experience">
+                                <li>
+                                    <p class="t_jobTitle">Job Title</p>
+                                    <p class="t_companyName">Company Name</p>
+                                    <p class="t_jobResponsibilities">Job Responsibilities</p>
+                                </li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col education">
+                            <div class="col blueDiv blackDiv">
+                                <h4>Education</h4>
+                            </div>
+                            <ul id="t_education">
+                                <li>
+                                    <p class="t_institute">Institute Name</p>
+                                    <p class="t_pass">Pass out year</p>
+                                    <p class="t_degree">Degree</p>
+                                </li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="col blueDiv blackDiv">
+                                <h4>Noteworthy Information</h4>
+                            </div>
+                            <ul id="t_nInfo">
+                                <li>Sports captain in tthe 11th and 12th grade in school.</li>
+                                <li>Active quizer.</li>
+                            </ul>
+                            <hr>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+            </div>
+
+        </div>
+    </div>
+    <!--
+
+                </div>-->
+
+
+
+    <!-- JQuery -->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="htmlCanvas.js"></script>
+    <script>
+        (function ($, d) {
+            var basicInfo = $('#basicInfo'),
+                skillForm = $('#skillForm'),
+                templateTheme = $('.templateTheme'),
+                userExperienceForm = $('#userExperienceForm'),
+                userEducationForm = $('#userEducationForm'),
+                userHobbiesForm = $('#userHobbiesForm'),
+                prevButton = $('#prevButton'),
+                currentIndex = 0,
+                currentChosenTemplateId = '',
+                formHeader = $('#formHeader'),
+                formPreviewDiv = $('#formPreview'),
+                htmlFormat = $('#htmlFormat'),
+                pdfFormat = $('#pdfFormat'),
+                formIdArray = ['chooseTemplateForm', 'basicInfo', 'skillForm', 'userExperienceForm', 'userEducationForm', 'userHobbiesForm', 'selectFormatForm'],
+                formDescriptionArray = ['Choose a Template :)', 'Basic Information', 'Skill Set', 'Experience', 'Education', 'Other Notable Info', 'Choose a Format'],
+                // templateArray = ['black_genesis', 'blue_genesis', 'blue_3d_genesis', 'black_3d_genesis'],
+
+                //parameters for form values
+                userBaicInfoJSON = {},
+                userSkillArr = [],
+
+                //parameters for user experience infos
+                userJobTitleArr = [],
+                userCompanyArr = [],
+                jobResponsibilityArr = [],
+
+                //parameters for user education infos
+                institutionNameArr = [],
+                completionDateArr = [],
+                userDegreeArr = [],
+
+                userHobbiesArr = [],
+
+                //preview form parameters
+                t_firstName = $('#t_firstName'),
+                t_lastName = $('#t_lastName'),
+                t_phone = $('#t_phone'),
+                t_email = $('#t_email'),
+                t_website = $('#t_website'),
+                t_skills = $('#t_skills'),
+                t_experience = $('#t_experience'),
+                t_education = $('#t_education'),
+                t_nInfo = $('#t_nInfo');
+
+
+            templateTheme.on('click', function (e) {
+                e.preventDefault();
+                var currFormID = "chooseTemplateForm";
+                currentChosenTemplateId = this.id; // user selected template id
+                prevButton.show();
+                basicFunctions.showPreviewForm();
+                basicFunctions.initializeTemplate();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+
+            basicInfo.on('submit', function (e) {
+                e.preventDefault();
+                var currFormID = this.id;
+                var firstName = $('#firstName').val(),
+                    lastName = $('#lastName').val(),
+                    contactNumber = $('#contact').val(),
+                    userEmail = $('#userMail').val(),
+                    userWebsite = $('#userWebsite').val();
+                userBaicInfoJSON = {
+                    'firstName': firstName,
+                    'lastName': lastName,
+                    'contactNumber': contactNumber,
+                    'userEmail': userEmail,
+                    'userWebsite': userWebsite
+                };
+                console.log(userBaicInfoJSON);
+                console.log(currentIndex);
+                basicFunctions.populateBasicInfoForm();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+            $('#addSkill').click(function (e) {
+                e.preventDefault();
+                $('#addSkill').before("<br/><input type = 'text' class = 'skill' placeholder = 'enter the skill'/><br/>");
+            });
+
+            skillForm.on('submit', function (e) {
+                e.preventDefault();
+                userSkillArr = [];
+                var currFormID = this.id;
+                var skills = document.getElementsByClassName('skill');
+                console.log(skills.length);
+                for (var i = 0; i < skills.length; i++) {
+                    userSkillArr.push(skills[i].value);
+                }
+                console.log(userSkillArr);
+                basicFunctions.populateUserSkillsForm();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+            $('#addExperience').click(function (e) {
+                e.preventDefault();
+                var item = "<br/><input type = 'text' class = 'jobTitle' placeholder = 'Job Title' /><br/><input type = 'text' class = 'companyName' placeholder = 'Enter Company Name' /><br/><input type = 'text' class = 'jobResponsibility' placeholder = 'Your Job Responsibilities' /><br/>";
+                $('#addExperience').before(item);
+            });
+
+
+            userExperienceForm.on('submit', function (e) {
+                e.preventDefault();
+                userJobTitleArr = []
+                userCompanyArr = []
+                jobResponsibilityArr = []
+                var currFormID = this.id;
+                var userJobTitleInput = document.getElementsByClassName('jobTitle'),
+                    userCompanyInput = document.getElementsByClassName('companyName'),
+                    jobResponsibilityInput = document.getElementsByClassName('jobResponsibility');
+                for (var i = 0; i < userJobTitleInput.length; i++) {
+                    userJobTitleArr.push(userJobTitleInput[i].value);
+                    userCompanyArr.push(userCompanyInput[i].value);
+                    jobResponsibilityArr.push(jobResponsibilityInput[i].value);
+                }
+                console.log(userJobTitleArr);
+                console.log(userCompanyArr);
+                console.log(jobResponsibilityArr);
+                basicFunctions.populateUserExperienceForm();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+            $('#addEducation').on('click', function (e) {
+                e.preventDefault();
+                var item = "<br/><input type = 'text' class = 'institutionName' placeholder = 'Institute Name' /><br/><input type = 'text' class = 'completionDate' placeholder = 'Your completion date' /><br/><input type = 'text' class = 'degree' placeholder = 'Give Degree' /><br/>";
+                $('#addEducation').before(item);
+            });
+
+
+            userEducationForm.on('submit', function (e) {
+                e.preventDefault();
+                institutionNameArr = []
+                completionDateArr = []
+                userDegreeArr = []
+                var currFormID = this.id;
+                var institutionNameInput = document.getElementsByClassName('institutionName'),
+                    s
+                completionDateInput = document.getElementsByClassName('completionDate'),
+                    userDegreeInput = document.getElementsByClassName('degree');
+                for (var i = 0; i < institutionNameInput.length; i++) {
+                    institutionNameArr.push(institutionNameInput[i].value);
+                    completionDateArr.push(completionDateInput[i].value);
+                    userDegreeArr.push(userDegreeInput[i].value);
+                }
+                console.log(institutionNameArr);
+                console.log(completionDateArr);
+                console.log(userDegreeArr);
+                basicFunctions.populateUserEducationForm();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+            $('#addHobby').click(function (e) {
+                e.preventDefault();
+                var item = "<br/><input type = 'text' class = 'hobbies' placeholder = 'enter your hobby'/><br/>";
+                $('#addHobby').before(item);
+            });
+
+            userHobbiesForm.on('submit', function (e) {
+                e.preventDefault();
+                userHobbiesArr = [];
+                var currFormID = this.id;
+                var hobbies = document.getElementsByClassName('hobbies');
+                for (var i = 0; i < hobbies.length; i++) {
+                    userHobbiesArr.push(hobbies[i].value);
+                }
+                console.log(userHobbiesArr);
+                basicFunctions.populateNoteworthyInfoForm();
+                basicFunctions.processNextForm(currFormID);
+            });
+
+            prevButton.click(function (e) {
+                var prevIndex = currentIndex - 1,
+                    prevFormId = formIdArray[prevIndex],
+                    currFormID = formIdArray[currentIndex];
+                $('#' + currFormID).hide();
+                $('#' + prevFormId).show();
+                basicFunctions.setFormHeader(prevIndex);
+                currentIndex = currentIndex - 1;
+                if (prevIndex == 0) {
+                    prevButton.hide();
+                    basicFunctions.hidePreviewForm();
+                }
+            });
+
+            var basicFunctions = {
+                getFormIndex: function (formString) {
+                    var index = formIdArray.indexOf(formString);
+                    if (index != -1) {
+                        return index;
+                    }
+                },
+
+                getFormArrCount: function () {
+                    var arrLen = formIdArray.length;
+                    return arrLen;
+                },
+
+                getIndexOfNextForm: function (currFormID) {
+                    var currFormIndex = basicFunctions.getFormIndex(currFormID);
+                    if (currFormIndex + 1 < basicFunctions.getFormArrCount()) {
+                        return currFormIndex + 1;
+                    } else {
+                        return -1;
+                    }
+                },
+
+                getIndexOfPreviousForm: function (currFormID) {
+                    var currFormIndex = basicFunctions.getFormIndex(currFormID);
+                    if (currFormIndex - 1 > -1) {
+                        return currFormIndex - 1;
+                    } else {
+                        return -1;
+                    }
+                },
+
+                processNextForm: function (currFormID) {
+                    var nextFormIndex = basicFunctions.getIndexOfNextForm(currFormID);
+                    if (nextFormIndex != -1) {
+                        currentIndex = nextFormIndex;
+                        basicFunctions.setFormHeader(nextFormIndex);
+                        var nextFormID = formIdArray[nextFormIndex];
+                        $('#' + currFormID).hide();
+                        $('#' + nextFormID).show();
+                    }
+                },
+
+                setFormHeader: function (index) {
+                    formHeader.text(formDescriptionArray[index]);
+                },
+
+                hidePreviewForm: function () {
+                    formPreviewDiv.hide();
+                },
+
+                showPreviewForm: function () {
+                    formPreviewDiv.show();
+                },
+
+                //functions to hadle info to populate in the preview form
+                populateBasicInfoForm: function () {
+                    var basicInfoJSON = userBaicInfoJSON;
+                    t_firstName.text(basicInfoJSON.firstName);
+                    t_lastName.text(basicInfoJSON.lastName);
+                    t_phone.text(basicInfoJSON.contactNumber);
+                    t_email.text(basicInfoJSON.userEmail);
+                    t_website.text(basicInfoJSON.userWebsite);
+                },
+
+                populateUserSkillsForm: function () {
+                    t_skills.empty();
+                    for (var i = 0; i < userSkillArr.length; i++) {
+                        var item = '<li>' + userSkillArr[i] + '</li>';
+                        t_skills.append(item);
+                    }
+                },
+
+                populateUserExperienceForm: function () {
+                    t_experience.empty();
+                    for (var i = 0; i < userJobTitleArr.length; i++) {
+                        var item = '<li>' +
+                            '<p class="t_jobTitle">' + userJobTitleArr[i] + '</p>' +
+                            '<p class="t_companyName">' + userCompanyArr[i] + '</p>' +
+                            '<p class="t_jobResponsibilities">' + jobResponsibilityArr[i] + '</p>' +
+                            '</li>';
+                        t_experience.append(item);
+                    }
+                },
+
+                populateUserEducationForm: function () {
+                    t_education.empty();
+                    for (var i = 0; i < institutionNameArr.length; i++) {
+                        var item = '<li>' +
+                            '<p class="t_institute">' + institutionNameArr[i] + '</p>' +
+                            '<p class="t_pass">' + completionDateArr[i] + '</p>' +
+                            '<p class="t_degree">' + userDegreeArr[i] + '</p>' +
+                            '</li>';
+                        t_education.append(item);
+                    }
+                },
+
+                populateNoteworthyInfoForm: function () {
+                    t_nInfo.empty();
+                    for (var i = 0; i < userHobbiesArr.length; i++) {
+                        var item = "<li>" + userHobbiesArr[i] + "</li>";
+                        t_nInfo.append(item);
+                    }
+                },
+
+                initializeTemplate: function () {
+                    var template = currentChosenTemplateId;
+                    $('.marginMe').css('top', '20px');
+                    $('.marginMe h2,h6').css('display', 'inline');
+                    $('.marginMe h2,h4').css('color', 'none');
+                    $('.marginMe h2').css('color', 'black');
+                    $('.marginMe h4').css('color', 'none');
+                    $('.marginMe h4').css('text-align', 'left');
+                    $('.blueDiv').css('background', 'none');
+                    $('.blackDiv').css('background-color', 'none');
+                    if (template == 'template1') {} else if (template == 'template2') {
+                        $('.marginMe h2,h4').css('color', 'cadetblue');
+                    } else if (template == 'template3') {
+                        $('.marginMe h4').css('color', 'white');
+                        $('.marginMe h4').css('text-align', 'center');
+                        $('.blueDiv').css('background', 'cadetblue');
+                        $('.marginMe h2').css('color', 'cadetblue');
+                    } else if (template == 'template4') {
+                        $('.marginMe h4').css('color', 'white');
+                        $('.marginMe h4').css('text-align', 'center');
+                        $('.blackDiv').css('background-color', 'black');
+                    }
+                }
+
+            }
+
+
+            htmlFormat.on('click', function (e) {
+                var htmlForm = $('.marginMe').html();
+                console.log(htmlForm);
+                this.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(htmlForm);
+            });
+
+            //create a pdf function
+            var a4 = [595.28, 841.89],
+                form = $('.marginMe');
+
+            pdfFormat.click(function (e) {
+                e.preventDefault();
+                createPDF();
+            });
+
+            function createPDF() {
+                getCanvas().then(function (canvas) {
+                    var
+                        img = canvas.toDataURL("image/png"),
+                        doc = new jsPDF({
+                            unit: 'px',
+                            format: 'a4'
+                        });
+                    doc.addImage(img, 'JPEG', 10, 10);
+                    doc.save('resume.pdf');
+                    form.width(cache_width);
+                    alert('Your PDF has been created and have been Downloaded!');
+                });
+            }
+
+            // create canvas object
+            function getCanvas() {
+                form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+                return html2canvas(form, {
+                    imageTimeout: 2000,
+                    removeContainer: true
+                });
+            }
+
+            $(d).ready(function () {
+                if (currentIndex == 0) {
+                    formHeader.text(formDescriptionArray[0]);
+                    basicFunctions.hidePreviewForm();
+                    prevButton.hide();
+                }
+            });
+
+        })(jQuery, document);
+    </script>
+</body>

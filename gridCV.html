@@ -1,0 +1,257 @@
+<html>
+
+<head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="icon/manifest.json">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#000000">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fill Me Up!</title>
+
+
+    <script src="js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/gridCV.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=GFS+Didot" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="chooseTemplateForm" style="overflow-x:hidden">
+        <div class="row">
+            <div class="col-xs-12 padDiv">
+                <p class="h2-responsive divider-new centerMeNow wow fadeInDown">GO AHEAD, SELECT A TEMPLATE OF YOUR CHOICE</p>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="card-deck-wrapper padDivCorners">
+                <div class="card-deck">
+                    <div id="template1" class="card templateTheme">
+                        <img class="card-img-top" src=img/t1.png alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">ELEGANT - BLACK</h4>
+                        </div>
+                    </div>
+                    <div id="template2" class="card templateTheme">
+                        <img class="card-img-top" src=img/t2.png alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">ELEGANT - BLUE</h4>
+                        </div>
+                    </div>
+                    <div id="template3" class="card templateTheme">
+                        <img class="card-img-top" src=img/t3.PNG alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">BOLD - BLACK</h4>
+                        </div>
+                    </div>
+                    <div id="template4" class="card templateTheme">
+                        <img class="card-img-top" src=img/t4.PNG alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">BOLD - BLUE</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id='mainContainer' style="overflow-x:hidden">
+        <div id='userFormFillSection' class="card-deck-wrapper" style="display:none">
+            <div class="card-deck padForm">
+
+                <div class="card card-block text-xs-center" id='fillingForm'>
+                    <h4 id='formHeader' class="card-title">Special title treatment</h4>
+                    <button class="btn btn-primary" style="position:absolute;right:0px;top:-50px;border-radius:0px" id='showPreviewButton'>Preview</button>
+
+                    <form id='basicInfo'>
+                        <input type='text' id='firstName' required placeholder='First Name' />
+                        <br/>
+                        <input type='text' id='lastName' required placeholder='Last Name' />
+                        <br/>
+                        <input type='number' id='contact' required placeholder='Phone Number' />
+                        <br/>
+                        <input type='email' id='userMail' required placeholder='Email Address' />
+                        <br/>
+                        <input type='text' id='userWebsite' placeholder='Website' />
+                        <br/>
+                        <input id='submitBasicInfo' type='submit' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='skillForm'>
+                        <input type='text' class='skill' required placeholder='Enter The Skill' />
+                        <br/>
+                        <button id='addSkill' class="btn btn-primary">ADD MORE SKILLS</button>
+                        <input type='submit' id='submitSkills' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='userExperienceForm'>
+                        <input type='text' class='jobTitle' required placeholder='Job Title' />
+                        <br/>
+                        <input type='text' class='companyName' required placeholder='Enter Company Name' />
+                        <br/>
+                        <input type='text' class='jobResponsibility' required placeholder='Your Job Responsibilities' />
+                        <br/>
+                        <button id='addExperience' class="btn btn-primary">ADD MORE EXPERIENCE</button>
+                        <input type='submit' id='submitUserExperienceForm' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='userEducationForm'>
+                        <input type='text' class='institutionName' required placeholder='Institute Name' />
+                        <br/>
+                        <input type='text' class='completionDate' required placeholder='Your Completion Date' />
+                        <br/>
+                        <input type='text' class='degree' required placeholder='Degree' />
+                        <br/>
+                        <button id='addEducation' class="btn btn-primary">ADD MORE QUALIFICATION</button>
+                        <input type='submit' id='submitEducationForm' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='userProjectForm'>
+                        <input type='text' class='projectTitle' required placeholder='Project Title' />
+                        <br/>
+                        <input type='text' class='projectDescription' required placeholder='Project Description' />
+                        <br/>
+                        <input type='text' class='projectLink' placeholder='Provide project URL' />
+                        <br/>
+                        <button id='addProject' class="btn btn-primary">Add More :)</button>
+                        <input type='submit' id='submitProjectForm' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='userHobbiesForm'>
+                        <input type='text' class='hobbies' required placeholder='Notable Information' />
+                        <br/>
+                        <button id='addHobby' class="btn btn-primary">ADD MORE INFORMATION</button>
+                        <input type='submit' id='submitHobbies' value='NEXT' class="btn btn-primary" />
+                    </form>
+
+                    <form id='selectFormatForm'>
+                        <a href='' class="btn btn-primary" download='index.html' id='htmlFormat'>HTML Format</a>
+                        <button class="btn btn-primary" id='pdfFormat'>PDF Format</button>
+                    </form>
+                    <a href="" id='prevButton' class="btn btn-primary">Previous</a>
+                    <hr/>
+                </div>
+
+                <div class="" id='resumePreviewID'>
+                    <!-- <h4 class="card-title">Special title treatment</h4> -->
+                    <div id="formPreview" class='marginMe'>
+                        <div id='previewFormSection'>
+                            <div class="row" style="text-align:left">
+                                <div class="col basicInfo">
+                                    <h2 id="t_firstName">Bruce</h2>
+                                    <h2 id="t_lastName"> Wayne</h2>
+                                    <br>
+                                    <h6 id=t_phone>123456789</h6>
+                                    <h6 id=t_email>brucewayne@wayne.com</h6>
+                                    <h6 id=t_website>www.gotham.com</h6>
+                                </div>
+                            </div>
+                            <br/>
+
+                            <div class="row">
+                                <div class="col woekEx ">
+                                    <div class="col blueDiv blackDiv">
+                                        <h4>Skills</h4>
+                                    </div>
+                                    <ul id="t_skills">
+                                        <li>Problem Solving</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col woekEx ">
+                                    <div class="col blueDiv blackDiv">
+                                        <h4>Work Experience</h4>
+                                    </div>
+                                    <ul id="t_experience">
+                                        <li>
+                                            <p class="t_jobTitle">CEO</p>
+                                            <p class="t_companyName">Wayne Enterprise</p>
+                                            <p class="t_jobResponsibilities">Run the company</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col education">
+                                    <div class="col blueDiv blackDiv">
+                                        <h4>Education</h4>
+                                    </div>
+                                    <ul id="t_education">
+                                        <li>
+                                            <p class="t_institute">Gotham University</p>
+                                            <p class="t_pass">1985</p>
+                                            <p class="t_degree">B.Tech</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col project">
+                                    <div class="col blueDiv blackDiv">
+                                        <h4>Projects</h4>
+                                    </div>
+                                    <ul id="t_project">
+                                        <li>
+                                            <p class="t_project_title">Bat Gadgets</p>
+                                            <p class="t_project_desc">Design and built gadgets such as Batarangs,Tear-Gas Pellets and Grapple Gun from scratch.</p>
+                                            <p class="t_project_link">www.batgadgets.com</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col blueDiv blackDiv">
+                                        <h4>Noteworthy Information</h4>
+                                    </div>
+                                    <ul id="t_nInfo">
+                                        <li>Cuz I'm BATMAN</li>
+                                        <li>Why did you say MARTHA?!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JQuery -->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/htmlCanvas.js"></script>
+
+    <!-- script that handles the creation of the resume  -->
+    <script src='js/main.js'></script>
+</body>
