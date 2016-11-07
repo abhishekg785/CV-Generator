@@ -1,0 +1,12 @@
+CV-generator
+------------
+
+About:
+  A simple user-friendly CV generator that can be used to create the resume in two formats : HTML and PDF.
+  User has the option to select a particular template and once the info is filled, the resume can be obtained and downloaded in 2 formats i.e PDF as well as HTML format.
+
+Technology:
+  The entire project is client side created using HTML5 ,CSS3 and JavaScript for User Interaction and User Input and converting into the corresponding html format. jsPDF.js is used for converting html into PDF format.   
+The main.js file is the main script containing the logic and implemetation for the same.
+
+Feel free to contribute and reporting issues.
